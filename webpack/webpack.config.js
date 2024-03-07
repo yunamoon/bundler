@@ -13,6 +13,27 @@ module.exports = {
         clean : true
     },
 
+    module : {
+        rules : [
+            {
+                test: /\.s?css$/,
+                use : [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
+            },
+
+            {
+                test : /\.js$/,
+                use : [
+                    'babel-loader'
+                ]
+            }
+        ]
+    },
+ 
     // 번들링 후 결과물의 처리 방식 
     plugins : [
         new HtmlPlugin({
